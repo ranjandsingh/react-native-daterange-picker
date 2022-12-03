@@ -1,12 +1,12 @@
 {
-  "name": "react-native-daterange-picker",
-  "version": "1.5.1",
-  "description": "Date range and single date picker for React Native (Supports iOS and Android)",
+  "name": "@rn-daterange-picker",
+  "version": "1.6.0",
+  "description": "Simple Date Range Picker Fro Android And iOS forked from react-native-daterange-picker",
   "main": "src/index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/naxulanth/react-native-daterange-picker.git"
+    "url": "git+https://github.com/ranjandsingh/react-native-daterange-picker.git"
   },
   "keywords": [
     "react-native",
@@ -14,12 +14,12 @@
     "daterange",
     "daterange-picker"
   ],
-  "author": "Naxulanth",
+  "author": "Ranjan Kumar Singh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/naxulanth/react-native-daterange-picker/issues"
+    "url": "https://github.com/ranjandsingh/react-native-daterange-picker/issues"
   },
-  "homepage": "https://github.com/naxulanth/react-native-daterange-picker/",
+  "homepage": "https://github.com/ranjandsingh/react-native-daterange-picker/",
   "dependencies": {
     "lodash": "^4.17.19",
     "moment": "^2.27.0"

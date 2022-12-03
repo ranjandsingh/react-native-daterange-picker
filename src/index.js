@@ -208,7 +208,7 @@ const DateRangePicker = ({
         });
       }
     },
-    [_moment, displayedDate, onChange, range, selecting, startDate]
+    [_moment, displayedDate, onChange, range, selecting, startDate,endDate]
   );
 
   useEffect(() => {
@@ -414,6 +414,7 @@ DateRangePicker.defaultProps = {
   range: false,
   buttons: false,
   presetButtons: false,
+  onClose:null
 };
 
 DateRangePicker.propTypes = {
@@ -446,6 +447,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     zIndex: 2147483647,
+    flex:1
   },
   container: {
     backgroundColor: "white",
