@@ -47,6 +47,8 @@ const DateRangePicker = ({
   buttonTextStyle,
   presetButtons,
   open,
+  onClose,
+  onSubmit
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [weeks, setWeeks] = useState([]);
@@ -88,15 +90,16 @@ const DateRangePicker = ({
     if (typeof open !== "boolean") onOpen();
   };
 
-  const _onClose = () => {
-    if (typeof open !== "boolean") onClose();
+  const reqClose = () => {
+    if (typeof open !== "boolean") return _onClose();
+    onClose && onClose()
   };
 
   const onOpen = () => {
     setIsOpen(true);
   };
 
-  const onClose = () => {
+  const _onClose = () => {
     setIsOpen(false);
     setSelecting(false);
     if (!endDate) {
@@ -211,7 +214,7 @@ const DateRangePicker = ({
   useEffect(() => {
     if (typeof open === "boolean") {
       if (open && !isOpen) onOpen();
-      else if (!open && isOpen) onClose();
+      else if (!open && isOpen) _onClose();
     }
   }, [open]);
 
@@ -328,7 +331,7 @@ const DateRangePicker = ({
       <View style={mergedStyles.backdrop}>
         <TouchableWithoutFeedback
           style={styles.closeTrigger}
-          onPress={_onClose}
+          onPress={reqClose}
         >
           <View style={styles.closeContainer} />
         </TouchableWithoutFeedback>
@@ -431,6 +434,7 @@ DateRangePicker.propTypes = {
   buttonStyle: PropTypes.object,
   buttonContainerStyle: PropTypes.object,
   presetButtons: PropTypes.bool,
+  onClose:PropTypes.func
 };
 
 const styles = StyleSheet.create({
